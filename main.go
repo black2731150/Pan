@@ -11,6 +11,15 @@ func main() {
 	initialize.IniterlizeConfig()
 	fmt.Println(global.Panserver.Config)
 
+	//初始化数据库
+	initialize.InitDB()
+	defer func() {
+		if global.Panserver.DB != nil {
+			db, _ := global.Panserver.DB.DB()
+			db.Close()
+		}
+	}()
+
 	//启动服务
 	initialize.RunServer()
 }
