@@ -2,6 +2,7 @@ package initialize
 
 import (
 	"fmt"
+	"pan/dao"
 	"pan/global"
 
 	"gorm.io/driver/mysql"
@@ -9,15 +10,8 @@ import (
 )
 
 func initMysqlGorm() *gorm.DB {
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?%s&%s&%s",
-		global.Panserver.Config.Database.Username,
-		global.Panserver.Config.Database.Password,
-		global.Panserver.Config.Database.Host,
-		global.Panserver.Config.Database.Port,
-		global.Panserver.Config.Database.Name,
-		global.Panserver.Config.Database.Options[0],
-		global.Panserver.Config.Database.Options[1],
-		global.Panserver.Config.Database.Options[2])
+	database := global.Panserver.Config.Database
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?%s&%s&%s", database.Username, database.Password, database.Host, database.Port, database.Name, database.Options[0], database.Options[1], database.Options[2])
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		return nil
@@ -25,7 +19,7 @@ func initMysqlGorm() *gorm.DB {
 
 	fmt.Println("Database initialize SUCCESS!")
 
-	db.AutoMigrate(&global.Panserver.Config.Pan)
+	db.AutoMigrate(dao.NewUser())
 
 	return db
 }
@@ -34,5 +28,7 @@ func InitDB() {
 	switch global.Panserver.Config.Database.Driver {
 	case "mysql":
 		global.Panserver.DB = initMysqlGorm()
+	default:
+		panic("InitDB Error!")
 	}
 }

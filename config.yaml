@@ -9,7 +9,7 @@ database:
   port: 3306              # 数据库端口号
   username: root          # 数据库用户名
   password: 273150        # 数据库密码
-  name: Pan      # 数据库名称
+  name: Pan               # 数据库名称
   options:                # 其他可选的数据库连接选项
     - charset=utf8mb4     # 字符集设置
     - parseTime=True      # 启用时间解析

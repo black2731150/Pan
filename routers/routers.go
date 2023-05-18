@@ -8,4 +8,13 @@ func SetRootGroupRouters(router *gin.RouterGroup) {
 
 	//静态文件
 	router.StaticFile("/", "./web/index.html")
+
+	//API路由组
+	apiV1Group := router.Group("/api/v1")
+	setAPIGroupRouters(apiV1Group)
+}
+
+func setAPIGroupRouters(router *gin.RouterGroup) {
+	router.POST("/login", Login())
+	router.POST("/register", Register())
 }
