@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+//注册api
 func Register() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		user := dao.NewUser()
