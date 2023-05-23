@@ -1,24 +1,52 @@
 # API文档
 
-### 登录 POST /api/v1/login
+## 登录 POST /api/v1/login
+发送参数    
+username string 必填   用户名          
+password string 必填   密码  
+
+返回参数  
+code    int    0表示成功 其他表示错误  
+message string 响应消息类型，如果是错误，那就是错误类型  
+details string 如果发生了错误，有关错误的细节  
+
+## 注册 POST /api/v1/register
 发送参数  
+username string 必填 用户名  (校验过的)  
+password string 必填 密码    (6<=长度<=20>)  
+email    string 必填 邮箱    (校验过的)  
+phonenum string 选填 手机号     
 
-username string 必填   用户名        
-password string 必填   密码
+返回参数  
+code    int    0表示成功 其他表示错误  
+message string 响应消息类型，如果是错误，那就是错误类型  
+details string 如果发生了错误，有关错误的细节  
 
-返回参数
-
-code int           100表示登录成功 其他表示错误
-detail string
-
-### 注册 POST /api/v1/register
-发送参数
-
+## 检测用户名是否已经存在 POST /api/v1/testUserName
+发送参数  
 username string 必填 用户名
-password string 必填 密码
-email    string 选填 邮箱
-phonenum string 选填 手机号
+
+返回参数  
+code    int    0表示成功 其他表示错误  
+message string 响应消息类型，如果是错误，那就是错误类型  
+details string 如果发生了错误，有关错误的细节  
+
+## 检测邮箱注册验证码是否正确 POST /api/v1/testEmailCode
+发送参数  
+email string 必填 邮箱 (正则匹配已经通过的)  
+code  string 必填 验证码 (必须是六位)  
+
+返回参数  
+code    int    0表示成功 其他表示错误   
+message string 响应消息类型，如果是错误，那就是错误类型    
+details string 如果发生了错误，有关错误的细节
+
+
+## 邮箱登录 POST /api/v1/loginWithEmail
+发送参数
+email string 必填 邮箱(正则匹配已经通过的)
 
 返回参数
-code int
-detail string
+code    int    0表示成功 其他表示错误   
+message string 响应消息类型，如果是错误，那就是错误类型    
+details string 如果发生了错误，有关错误的细节

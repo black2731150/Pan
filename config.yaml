@@ -14,3 +14,11 @@ database:
     - charset=utf8mb4     # 字符集设置
     - parseTime=True      # 启用时间解析
     - loc=Local           # 时间地区设置
+
+# SMTP 配置
+smtp:
+  host: smtp.qq.com                 # SMTP 服务器地址
+  port: 587                         # SMTP 服务器端口
+  username: 1737429543@qq.com       # 发件人邮箱用户名
+  password: vrescmcdciqnfbjf        # 发件人邮箱密码
+  isssl: True
