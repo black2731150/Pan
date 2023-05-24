@@ -2,10 +2,10 @@ package v1
 
 import (
 	"fmt"
-	"pan/common"
 	"pan/dao"
 	"pan/pkg/errcode"
 	"pan/pkg/response"
+	"pan/utils"
 
 	"github.com/gin-gonic/gin"
 )
@@ -16,7 +16,7 @@ func Login() gin.HandlerFunc {
 		fmt.Println(ctx.Request)
 		user := dao.NewUser()
 		user.UserName = ctx.PostForm("username")
-		user.Password = common.StringMD5(ctx.PostForm("password"))
+		user.Password = utils.StringMD5(ctx.PostForm("password"))
 
 		response := response.NewRespponse(ctx)
 

@@ -2,7 +2,7 @@ package dao
 
 import (
 	"errors"
-	"pan/common"
+	"pan/utils"
 
 	"gorm.io/gorm"
 )
@@ -23,13 +23,13 @@ func NewUser() *User {
 
 //注册新用户到数据库
 func (u *User) RegisterNewUser() {
-	common.GetGormDB().Create(u)
+	utils.GetGormDB().Create(u)
 }
 
 //去查找用户和密码在不在数据库，在就返回true，否则false
 func (u *User) UserNameLogin() bool {
 	user := new(User)
-	db := common.GetGormDB()
+	db := utils.GetGormDB()
 	if err := db.First(&user, "user_name=? and password=?", u.UserName, u.Password).Error; err != nil {
 		return false
 	} else {
@@ -40,7 +40,7 @@ func (u *User) UserNameLogin() bool {
 //去查找那个用户名存不存在，如果存在
 func (u *User) HaveTheUserName() bool {
 	// fmt.Println("In function username:", u.UserName)
-	db := common.GetGormDB()
+	db := utils.GetGormDB()
 	newUser := NewUser()
 	if err := db.Table("users").First(newUser, "user_name=?", u.UserName).Error; err != nil {
 		// fmt.Println(err)
@@ -56,7 +56,7 @@ func (u *User) HaveTheUserName() bool {
 
 //检测用户邮箱是否已经注册
 func (u *User) HaveTheEmail() bool {
-	db := common.GetGormDB()
+	db := utils.GetGormDB()
 	if err := db.Table("users").First(NewUser(), "email=?", u.Email).Error; err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			return false

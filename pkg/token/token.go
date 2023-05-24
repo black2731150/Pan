@@ -1,8 +1,8 @@
 package token
 
 import (
-	"pan/common"
 	"pan/global"
+	"pan/utils"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
@@ -22,8 +22,8 @@ func GenerateToken(appKey, appSecret string) (string, error) {
 	nowTime := time.Now()
 	expireTime := nowTime.Add(time.Duration(global.Panserver.Config.JWTconfig.Expire))
 	claims := Claims{
-		AppKey:    common.StringMD5(appKey),
-		AppSecret: common.StringMD5(appSecret),
+		AppKey:    utils.StringMD5(appKey),
+		AppSecret: utils.StringMD5(appSecret),
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: expireTime.Unix(),
 			Issuer:    global.Panserver.Config.JWTconfig.Issure,

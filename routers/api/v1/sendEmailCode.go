@@ -1,10 +1,10 @@
 package v1
 
 import (
-	"pan/common"
 	"pan/pkg/email"
 	"pan/pkg/errcode"
 	"pan/pkg/response"
+	"pan/utils"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,7 +13,7 @@ import (
 func SendEmailCode() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		em := ctx.PostForm("email")
-		code := common.GetRandSixCode()
+		code := utils.GetRandSixCode()
 		err := email.SendEmail(em, "云盘验证码", code)
 		response := response.NewRespponse(ctx)
 		if err != nil {

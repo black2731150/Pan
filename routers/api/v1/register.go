@@ -1,11 +1,11 @@
 package v1
 
 import (
-	"pan/common"
 	"pan/dao"
 	"pan/global"
 	"pan/pkg/errcode"
 	"pan/pkg/response"
+	"pan/utils"
 
 	"github.com/gin-gonic/gin"
 )
@@ -33,7 +33,7 @@ func Register() gin.HandlerFunc {
 			response.ToErrorResponse(err)
 			return
 		}
-		user.Password = common.StringMD5(user.Password)
+		user.Password = utils.StringMD5(user.Password)
 
 		//验证这个用户名是否存在
 		if user.HaveTheUserName() {
