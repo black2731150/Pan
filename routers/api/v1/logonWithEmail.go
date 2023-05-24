@@ -3,8 +3,8 @@ package v1
 import (
 	"pan/dao"
 	"pan/global"
+	"pan/pkg/app"
 	"pan/pkg/errcode"
-	"pan/pkg/response"
 
 	"github.com/gin-gonic/gin"
 )
@@ -16,7 +16,7 @@ func LoginWithEmail() gin.HandlerFunc {
 		user.Email = ctx.PostForm("email")
 		code := ctx.PostForm("emailcode")
 		c, ok := global.GetEmailCodeFromMap(user.Email)
-		response := response.NewRespponse(ctx)
+		response := app.NewRespponse(ctx)
 		if user.HaveTheEmail() || ok || c == code {
 			response.ToErrorResponse(errcode.Success)
 		} else {

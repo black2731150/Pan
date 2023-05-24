@@ -1,9 +1,9 @@
 package middlieware
 
 import (
+	"pan/pkg/app"
 	"pan/pkg/errcode"
-	"pan/pkg/response"
-	app "pan/pkg/token"
+	tok "pan/pkg/token"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
@@ -26,7 +26,7 @@ func JWT() gin.HandlerFunc {
 		if token == "" {
 			ecode = errcode.InbalidParams
 		} else {
-			_, err := app.ParseToken(token)
+			_, err := tok.ParseToken(token)
 			if err != nil {
 				switch err.(*jwt.ValidationError).Errors {
 				case jwt.ValidationErrorExpired:
@@ -38,7 +38,7 @@ func JWT() gin.HandlerFunc {
 		}
 
 		if ecode != errcode.Success {
-			respnse := response.NewRespponse(ctx)
+			respnse := app.NewRespponse(ctx)
 			respnse.ToErrorResponse(ecode)
 			ctx.Abort()
 			return

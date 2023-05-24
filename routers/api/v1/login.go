@@ -3,8 +3,8 @@ package v1
 import (
 	"fmt"
 	"pan/dao"
+	"pan/pkg/app"
 	"pan/pkg/errcode"
-	"pan/pkg/response"
 	"pan/utils"
 
 	"github.com/gin-gonic/gin"
@@ -18,7 +18,7 @@ func Login() gin.HandlerFunc {
 		user.UserName = ctx.PostForm("username")
 		user.Password = utils.StringMD5(ctx.PostForm("password"))
 
-		response := response.NewRespponse(ctx)
+		response := app.NewRespponse(ctx)
 
 		if user.UserNameLogin() {
 			data := gin.H{

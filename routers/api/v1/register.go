@@ -3,8 +3,8 @@ package v1
 import (
 	"pan/dao"
 	"pan/global"
+	"pan/pkg/app"
 	"pan/pkg/errcode"
-	"pan/pkg/response"
 	"pan/utils"
 
 	"github.com/gin-gonic/gin"
@@ -13,7 +13,7 @@ import (
 //注册api
 func Register() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
-		response := response.NewRespponse(ctx)
+		response := app.NewRespponse(ctx)
 		user := dao.NewUser()
 		//获取用户名并验证
 		user.UserName = ctx.PostForm("username")

@@ -11,6 +11,9 @@ func main() {
 	initialize.IniterlizeConfig()
 	fmt.Println(global.Panserver.Config)
 
+	//初始化日志
+	initialize.InitLog()
+
 	//初始化数据库
 	initialize.InitDB()
 	defer func() {

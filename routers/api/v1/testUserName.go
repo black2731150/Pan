@@ -2,8 +2,8 @@ package v1
 
 import (
 	"pan/dao"
+	"pan/pkg/app"
 	"pan/pkg/errcode"
-	"pan/pkg/response"
 
 	"github.com/gin-gonic/gin"
 )
@@ -14,7 +14,7 @@ func TestUserName() gin.HandlerFunc {
 		user := dao.NewUser()
 		user.UserName = ctx.PostForm("username")
 		// fmt.Println("The user name is : ", user.UserName)
-		response := response.NewRespponse(ctx)
+		response := app.NewRespponse(ctx)
 		if user.HaveTheUserName() {
 			response.ToErrorResponse(errcode.HaveTheUser)
 		} else {

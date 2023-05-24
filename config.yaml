@@ -2,6 +2,8 @@ pan:
   host: 0.0.0.0           #服务地址
   port: 1234              #服务端口
   name: pan-server        #服务名称
+  defaultpagesize: 10     #最小分页
+  maxpagesize: 100        #最大分页
 
 database:
   driver: mysql
