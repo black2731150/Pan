@@ -10,14 +10,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//登录api
+//这个接口用于用户使用用户名和密码登录
 func Login() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		fmt.Println(ctx.Request)
 		user := dao.NewUser()
 		user.UserName = ctx.PostForm("username")
-		user.Password = ctx.PostForm("password")
-		user.Password = common.StringMD5(user.Password)
+		user.Password = common.StringMD5(ctx.PostForm("password"))
 
 		response := response.NewRespponse(ctx)
 

@@ -22,3 +22,8 @@ smtp:
   username: 1737429543@qq.com       # 发件人邮箱用户名
   password: vrescmcdciqnfbjf        # 发件人邮箱密码
   isssl: True
+
+JWTconfig:
+  secret: xiaoqi
+  issuer: pan-service
+  expire: 7200

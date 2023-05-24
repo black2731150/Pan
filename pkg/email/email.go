@@ -3,6 +3,7 @@ package email
 import (
 	"fmt"
 	"pan/global"
+	"time"
 
 	"github.com/go-gomail/gomail"
 )
@@ -26,5 +27,6 @@ func SendEmail(recipient, subjec, body string) error {
 		return err
 	}
 
+	global.AddToMap(recipient, body, 60*time.Second)
 	return nil
 }

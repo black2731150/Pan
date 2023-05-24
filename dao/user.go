@@ -9,11 +9,12 @@ import (
 
 //用户信息
 type User struct {
-	ID       uint   `json:"id" gorm:"primary_key"`
-	UserName string `json:"user_name"`
-	Password string `json:"password"`
-	Email    string `json:"email"`
-	Phonenum string `json:"phonenum"`
+	ID        uint   `json:"id" gorm:"primary_key"`
+	UserName  string `json:"user_name"`
+	Password  string `json:"password"`
+	Email     string `json:"email"`
+	Phonenum  string `json:"phonenum"`
+	Filespace string `json:"filespace"`
 }
 
 func NewUser() *User {
@@ -38,28 +39,29 @@ func (u *User) UserNameLogin() bool {
 
 //去查找那个用户名存不存在，如果存在
 func (u *User) HaveTheUserName() bool {
+	// fmt.Println("In function username:", u.UserName)
 	db := common.GetGormDB()
-	if err := db.First(NewUser(), "user_name=?", u.UserName).Error; err != nil {
+	newUser := NewUser()
+	if err := db.Table("users").First(newUser, "user_name=?", u.UserName).Error; err != nil {
+		// fmt.Println(err)
 		if errors.Is(err, gorm.ErrRecordNotFound) {
+			// fmt.Println("用户名:", newUser.UserName, "没有被注册")
 			return false
-		} else {
-			return true
 		}
 	}
 
-	return false
+	// fmt.Println("用户名:", newUser.UserName, "已经被注册")
+	return true
 }
 
 //检测用户邮箱是否已经注册
 func (u *User) HaveTheEmail() bool {
 	db := common.GetGormDB()
-	if err := db.First(NewUser(), "email=?", u.Email).Error; err != nil {
-		if errors.Is(err, gorm.ErrRegistered) {
+	if err := db.Table("users").First(NewUser(), "email=?", u.Email).Error; err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
 			return false
 		}
-	} else {
-		return true
 	}
 
-	return false
+	return true
 }

@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+//这个接口用于前端检测验证码是否正确
 func TestEmailCode() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		code := ctx.PostForm("code")

@@ -1,26 +1,23 @@
 package v1
 
 import (
-	"pan/common"
 	"pan/dao"
 	"pan/global"
-	"pan/pkg/email"
 	"pan/pkg/errcode"
 	"pan/pkg/response"
-	"time"
 
 	"github.com/gin-gonic/gin"
 )
 
+//这个接口用于用户用户使用邮箱和邮箱验证码登录
 func LoginWithEmail() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		user := dao.NewUser()
-		user.Email = ctx.PostForm("eamil")
+		user.Email = ctx.PostForm("email")
+		code := ctx.PostForm("emailcode")
+		c, ok := global.GetEmailCodeFromMap(user.Email)
 		response := response.NewRespponse(ctx)
-		if user.HaveTheEmail() {
-			code := common.GetRandSixCode()
-			email.SendEmail(user.Email, "验证码", code)
-			global.AddToMap(user.Email, code, 60*time.Second)
+		if user.HaveTheEmail() || ok || c == code {
 			response.ToErrorResponse(errcode.Success)
 		} else {
 			err := errcode.InbalidParams

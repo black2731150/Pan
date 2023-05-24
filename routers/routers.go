@@ -23,6 +23,7 @@ func SetRootGroupRouters(router *gin.RouterGroup) {
 
 	//API路由组
 	apiV1Group := router.Group("/api/v1")
+	apiV1Group.Use(middlieware.JWT())
 	setAPIGroupRouters(apiV1Group)
 }
 
@@ -33,6 +34,7 @@ func setAPIGroupRouters(router *gin.RouterGroup) {
 	RegitsterNewRouter(router, "POST", "/testUserName", v1.TestUserName())
 	RegitsterNewRouter(router, "POST", "/testEmailCode", v1.TestEmailCode())
 	RegitsterNewRouter(router, "POST", "/loginWithEmail", v1.LoginWithEmail())
+	RegitsterNewRouter(router, "POST", "/sendEmailCode", v1.SendEmailCode())
 }
 
 //自动注册OPTIONS
