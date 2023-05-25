@@ -27,5 +27,5 @@ smtp:
 
 JWTconfig:
   secret: xiaoqi
-  issuer: pan-service
-  expire: 7200
+  issure: pan-service
+  expire: 99999999

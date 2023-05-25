@@ -2,8 +2,8 @@ package initialize
 
 import (
 	"fmt"
-	"pan/dao"
 	"pan/global"
+	"pan/models"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -20,7 +20,7 @@ func initMysqlGorm() *gorm.DB {
 
 	fmt.Println("Database initialize SUCCESS!")
 
-	db.AutoMigrate(dao.NewUser())
+	db.AutoMigrate(models.NewUser())
 
 	return db
 }

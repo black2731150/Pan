@@ -30,3 +30,15 @@ func SendEmail(recipient, subjec, body string) error {
 	global.AddToMap(recipient, body, 60*time.Second)
 	return nil
 }
+
+func TestTheEmailCode(email, code string) bool {
+	readlcode, ok := global.GetEmailCodeFromMap(email)
+	if !ok {
+		return false
+	}
+
+	if readlcode != code {
+		return false
+	}
+	return true
+}

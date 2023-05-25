@@ -19,6 +19,15 @@ var (
 	TheEmailCodeError         = NewError(10000009, "验证码错误")
 )
 
+var (
+	FaildUploadFile   = NewError(20000001, "上传文件失败")
+	CanNotFindFile    = NewError(20000002, "找不到文件")
+	DownloadFileError = NewError(20000003, "下载文件错误")
+	RenameErrer       = NewError(20000004, "更改文件名错误")
+	DeleteFileError   = NewError(20000005, "删除文件错误")
+	CanNotFindFolder  = NewError(20000006, "找不到文件夹")
+)
+
 type Error struct {
 	code    int      //`json:"code"`
 	message string   //`json:"message"`

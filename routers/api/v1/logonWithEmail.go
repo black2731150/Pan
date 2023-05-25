@@ -1,10 +1,11 @@
 package v1
 
 import (
-	"pan/dao"
 	"pan/global"
+	"pan/models"
 	"pan/pkg/app"
 	"pan/pkg/errcode"
+	"pan/pkg/token"
 
 	"github.com/gin-gonic/gin"
 )
@@ -12,12 +13,29 @@ import (
 //这个接口用于用户用户使用邮箱和邮箱验证码登录
 func LoginWithEmail() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
-		user := dao.NewUser()
+		user := models.NewUser()
 		user.Email = ctx.PostForm("email")
 		code := ctx.PostForm("emailcode")
 		c, ok := global.GetEmailCodeFromMap(user.Email)
 		response := app.NewRespponse(ctx)
 		if user.HaveTheEmail() || ok || c == code {
+			err := user.GetUserIDFromEmail()
+			if err != nil {
+				response.ToErrorResponse(errcode.ServerError)
+				return
+			}
+			token, err := token.GenerateToken(user.UserName, user.Email, user.ID)
+			if err != nil {
+				data := gin.H{
+					"code":    0,
+					"details": "Login Success",
+				}
+				user.GetEmailFromUserName()
+				ctx.SetCookie("token", token, 60*60*24*7, "/", "", false, true)
+				response.ToResponse(data)
+			} else {
+				response.ToErrorResponse(errcode.UnauthorizedTokenGenerate)
+			}
 			response.ToErrorResponse(errcode.Success)
 		} else {
 			err := errcode.InbalidParams

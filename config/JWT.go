@@ -1,7 +1,7 @@
 package config
 
 type JWTconfig struct {
-	Secret string `json:"secret"`
-	Issure string `json:"issure"`
-	Expire int    `json:"expire"`
+	Secret string `yaml:"secret"`
+	Issure string `yaml:"issure"`
+	Expire int    `yaml:"expire"`
 }

@@ -1,1 +1,2 @@
 2023/05/24 11:05:32 {"callers":["/home/PAN/initialize/log.go: 28 pan/initialize.InitLog"],"level":"info","message":"eddycjy: go-aaaa/pan-service","time":1684897532760419027}
+2023/05/24 14:21:24 {"callers":["/home/PAN/initialize/log.go: 28 pan/initialize.InitLog"],"level":"info","message":"\u003cnil\u003e","time":1684909284720505495}
