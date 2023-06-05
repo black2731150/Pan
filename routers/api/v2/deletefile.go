@@ -4,6 +4,7 @@ import (
 	"pan/pkg/app"
 	"pan/pkg/errcode"
 	"pan/utils"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,10 +14,11 @@ func DeleteFile() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 
 		response := app.NewRespponse(ctx)
-
+		userid := ctx.GetUint("UserID")
 		filepath := ctx.PostForm("filepath")
 
-		err := utils.RemoveFile(filepath)
+		path := "storage" + "/" + strconv.Itoa(int(userid)) + "/" + filepath
+		err := utils.RemoveFile(path)
 		if err != nil {
 			response.ToErrorResponse(errcode.DeleteFileError)
 			return

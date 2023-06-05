@@ -4,6 +4,7 @@ import (
 	"pan/pkg/app"
 	"pan/pkg/errcode"
 	"pan/utils"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -12,12 +13,10 @@ import (
 func GetFileList() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		response := app.NewRespponse(ctx)
+		userid := ctx.GetUint("UserID")
 		folderpath := ctx.Query("floderpath")
-		if folderpath == "" {
-			response.ToErrorResponse(errcode.CanNotFindFolder)
-			return
-		}
-		fileinfos, err := utils.GetFilesInfoFromFolder(folderpath)
+		path := "storage" + "/" + strconv.Itoa(int(userid)) + "/" + folderpath
+		fileinfos, err := utils.GetFilesInfoFromFolder(path)
 		if err != nil {
 			response.ToErrorResponse(errcode.CanNotFindFolder.WithDetails("文件夹遍历失败"))
 			return

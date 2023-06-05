@@ -1,6 +1,7 @@
 package v1
 
 import (
+	"fmt"
 	"pan/global"
 	"pan/models"
 	"pan/pkg/app"
@@ -14,6 +15,7 @@ import (
 //注册api
 func Register() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
+		fmt.Println(ctx.Request)
 		response := app.NewRespponse(ctx)
 		user := models.NewUser()
 		//获取用户名并验证
@@ -69,6 +71,9 @@ func Register() gin.HandlerFunc {
 			return
 		}
 
+		//保存手机号
+		user.Phonenum = ctx.PostForm("phonenum")
+
 		//注册用户
 		user.RegisterNewUser()
 		user.GetUserIDFromUsername()
@@ -80,5 +85,6 @@ func Register() gin.HandlerFunc {
 			"message": "Register Success!",
 		}
 		response.ToResponse(data)
+		fmt.Println(ctx.Request.Response)
 	}
 }

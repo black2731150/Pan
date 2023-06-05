@@ -5,6 +5,7 @@ import (
 	"pan/pkg/app"
 	"pan/pkg/errcode"
 	"pan/utils"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,12 +14,15 @@ import (
 func Download() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		response := app.NewRespponse(ctx)
-		//userid := ctx.PostForm("userid")
+		userid := ctx.GetUint("UserID")
 		filepath := ctx.PostForm("filepath")
 
-		file, err := utils.OpenFile(filepath)
+		path := "storage" + "/" + strconv.Itoa(int(userid)) + "/" + filepath
+
+		file, err := utils.OpenFile(path)
 		if err != nil {
 			response.ToErrorResponse(errcode.CanNotFindFile.WithDetails("打开需要下载的文件失败"))
+			return
 		}
 		defer file.Close()
 

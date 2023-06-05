@@ -6,6 +6,7 @@ import (
 	"pan/pkg/errcode"
 	"pan/pkg/token"
 	"pan/utils"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -36,7 +37,11 @@ func Login() gin.HandlerFunc {
 			}
 			token, err := token.GenerateToken(user.UserName, user.Email, user.ID)
 			if err == nil {
-				ctx.SetCookie("token", token, 60*60*24*7, "/", "", false, true)
+				maxAge := 60 * 60 * 24 * 7
+				tokenValue := "token=" + token + "; Path=/; Max-Age=" + strconv.Itoa(maxAge) + "; SameSite=None"
+				ctx.Header("Set-Cookie", tokenValue)
+				// ctx.SetCookie("token", token, 60*60*24*7, "/", "", false, true)
+
 				data["userid"] = user.ID
 				response.ToResponse(data)
 

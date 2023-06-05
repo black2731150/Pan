@@ -15,12 +15,10 @@ func SetRootGroupRouters(router *gin.RouterGroup) {
 	//中间件
 	router.Use(middlieware.Cors())
 
-	//ping测试路由
-	router.GET("/ping", ping())
-
 	//静态文件
 	router.StaticFS("/web", http.Dir("./web"))
 	router.StaticFile("/", "./web/index.html")
+	router.StaticFile("/requests", "./request.log")
 
 	//APIV1 路由组
 	apiV1Group := router.Group("/api/v1")
@@ -38,6 +36,7 @@ func SetRootGroupRouters(router *gin.RouterGroup) {
 
 //api/v1 路由管理
 func setAPIV1GroupRouters(router *gin.RouterGroup) {
+	router.Use(middlieware.RequestShow())
 	RegitsterNewRouter(router, "POST", "/login", v1.Login())
 	RegitsterNewRouter(router, "POST", "/register", v1.Register())
 	RegitsterNewRouter(router, "POST", "/testUserName", v1.TestUserName())
@@ -49,6 +48,7 @@ func setAPIV1GroupRouters(router *gin.RouterGroup) {
 
 //api/v2 路由管理
 func setAPIV2GroupRouters(router *gin.RouterGroup) {
+	router.Use(middlieware.RequestShow())
 	RegitsterNewRouter(router, "GET", "/ping", v2.Ping())
 	RegitsterNewRouter(router, "POST", "/download", v2.Download())
 	RegitsterNewRouter(router, "POST", "/upload", v2.Upload())

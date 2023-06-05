@@ -113,7 +113,7 @@ func (l *Logger) WithCallersFrames() *Logger {
 	return ll
 }
 
-//格式话日志数据为json
+//格式化日志数据为json
 func (l *Logger) JSONFormat(level Level, message string) map[string]interface{} {
 	data := make(Fields, len(l.fields)+4)
 	data["level"] = level.String()

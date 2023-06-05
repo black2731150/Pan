@@ -4,6 +4,7 @@ import (
 	"pan/pkg/app"
 	"pan/pkg/errcode"
 	"pan/utils"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,9 +14,12 @@ func UpdateFileName() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		response := app.NewRespponse(ctx)
 		newname := ctx.PostForm("newname")
-		oldname := ctx.PostForm("oldname")
+		userid := ctx.GetUint("UserID")
+		filepath := ctx.PostForm("filepath")
 
-		err := utils.RenameFile(oldname, newname)
+		path := "storage" + "/" + strconv.Itoa(int(userid)) + "/" + filepath
+
+		err := utils.RenameFile(path, newname)
 		if err != nil {
 			response.ToErrorResponse(errcode.RenameErrer)
 		}

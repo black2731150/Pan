@@ -5,6 +5,7 @@ import (
 	"os"
 	"pan/models"
 	"path/filepath"
+	"strings"
 )
 
 func MakeDir(path string) error {
@@ -47,7 +48,9 @@ func GetFileStat(filepath string) (os.FileInfo, error) {
 }
 
 func RenameFile(filepath string, newname string) error {
-	err := os.Rename(filepath, newname)
+	lastindex := strings.LastIndex(filepath, "/")
+	newpath := filepath[:lastindex] + "/" + newname
+	err := os.Rename(filepath, newpath)
 	if err != nil {
 		return err
 	}

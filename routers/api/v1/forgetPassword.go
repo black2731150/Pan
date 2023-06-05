@@ -25,7 +25,7 @@ func ForgetPassword() gin.HandlerFunc {
 		if email.TestTheEmailCode(e, code) {
 			err := user.UpdatePassword(newPassword)
 			if err != nil {
-				response.ToErrorResponse(errcode.InbalidParams)
+				response.ToErrorResponse(errcode.InbalidParams.WithDetails("更新密码失败"))
 			}
 			data := gin.H{
 				"code":    0,

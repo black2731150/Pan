@@ -14,6 +14,8 @@ func ReplacePassword() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		response := app.NewRespponse(ctx)
 		// oldpassword := ctx.PostForm("oldpassword")
+		// oldpassword = utils.StringMD5(oldpassword)
+
 		newpassword := ctx.PostForm("newpassword")
 		newpassword = utils.StringMD5(newpassword)
 
