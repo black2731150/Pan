@@ -26,7 +26,7 @@ func SetRootGroupRouters(router *gin.RouterGroup) {
 
 	//APIV2 路由组
 	apiV2Geoup := router.Group("/api/v2")
-	apiV2Geoup.Use(middlieware.JWT())
+	// apiV2Geoup.Use(middlieware.JWT())
 	setAPIV2GroupRouters(apiV2Geoup)
 
 	//user 路由组
@@ -50,7 +50,7 @@ func setAPIV1GroupRouters(router *gin.RouterGroup) {
 func setAPIV2GroupRouters(router *gin.RouterGroup) {
 	router.Use(middlieware.RequestShow())
 	RegitsterNewRouter(router, "GET", "/ping", v2.Ping())
-	RegitsterNewRouter(router, "POST", "/download", v2.Download())
+	RegitsterNewRouter(router, "GET", "/download", v2.Download())
 	RegitsterNewRouter(router, "POST", "/upload", v2.Upload())
 	RegitsterNewRouter(router, "GET", "/getfilelist", v2.GetFileList())
 	RegitsterNewRouter(router, "DELETE", "/deletefile", v2.DeleteFile())

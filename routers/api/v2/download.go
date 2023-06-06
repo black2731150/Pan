@@ -1,6 +1,7 @@
 package v2
 
 import (
+	"fmt"
 	"io"
 	"pan/pkg/app"
 	"pan/pkg/errcode"
@@ -15,9 +16,15 @@ func Download() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		response := app.NewRespponse(ctx)
 		userid := ctx.GetUint("UserID")
-		filepath := ctx.PostForm("filepath")
+		fmt.Println(userid)
+		filepath := ctx.DefaultQuery("filepath", "")
+		if filepath == "" {
+			response.ToErrorResponse(errcode.CanNotFindFile.WithDetails("没有指定文件"))
+			return
+		}
 
-		path := "storage" + "/" + strconv.Itoa(int(userid)) + "/" + filepath
+		path := "./storage" + "/" + strconv.Itoa(int(userid)) + "/" + filepath
+		fmt.Println(path)
 
 		file, err := utils.OpenFile(path)
 		if err != nil {

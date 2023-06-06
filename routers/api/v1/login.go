@@ -38,7 +38,7 @@ func Login() gin.HandlerFunc {
 			token, err := token.GenerateToken(user.UserName, user.Email, user.ID)
 			if err == nil {
 				maxAge := 60 * 60 * 24 * 7
-				tokenValue := "token=" + token + "; Path=/; Max-Age=" + strconv.Itoa(maxAge) + "; SameSite=None"
+				tokenValue := "token=" + token + "; Path=/; Max-Age=" + strconv.Itoa(maxAge) + "; SameSite=None; HttpOnly"
 				ctx.Header("Set-Cookie", tokenValue)
 				// ctx.SetCookie("token", token, 60*60*24*7, "/", "", false, true)
 
