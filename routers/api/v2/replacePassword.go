@@ -35,11 +35,8 @@ func ReplacePassword() gin.HandlerFunc {
 			response.ToErrorResponse(errcode.ServerError.WithDetails("更新密码失败"))
 			return
 		} else {
-			data := gin.H{
-				"code":    0,
-				"message": "Replace password success!",
-			}
-			response.ToResponse(data)
+			response.ToSuccessResponse("Replace password success!")
+			return
 		}
 	}
 }

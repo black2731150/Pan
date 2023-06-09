@@ -39,6 +39,13 @@ func (r *Response) ToResponseList(list interface{}, totalRows int) {
 	})
 }
 
+func (r *Response) ToSuccessResponse(message string) {
+	r.Ctx.JSON(http.StatusOK, gin.H{
+		"code":    0,
+		"message": message,
+	})
+}
+
 func (r *Response) ToErrorResponse(err *errcode.Error) {
 	response := gin.H{
 		"code":    err.Code(),

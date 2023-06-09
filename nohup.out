@@ -1,0 +1,335 @@
+host 1234
+Config initialize SUCCESS!
+{{0.0.0.0 1234 pan-server 0 100} {mysql localhost 3306 root 273150 Pan [charset=utf8mb4 parseTime=True loc=Local]} {smtp.qq.com 587 1737429543@qq.com vrescmcdciqnfbjf} {xiaoqi pan-service 99999999}}
+Database initialize SUCCESS!
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /web/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (4 handlers)
+[GIN-debug] HEAD   /web/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (4 handlers)
+[GIN-debug] GET    /                         --> github.com/gin-gonic/gin.(*RouterGroup).StaticFile.func1 (4 handlers)
+[GIN-debug] HEAD   /                         --> github.com/gin-gonic/gin.(*RouterGroup).StaticFile.func1 (4 handlers)
+[GIN-debug] POST   /api/v1/login             --> pan/routers/api/v1.Login.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/login             --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/register          --> pan/routers/api/v1.Register.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/register          --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/testUserName      --> pan/routers/api/v1.TestUserName.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/testUserName      --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/testEmailCode     --> pan/routers/api/v1.TestEmailCode.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/testEmailCode     --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/loginWithEmail    --> pan/routers/api/v1.LoginWithEmail.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/loginWithEmail    --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/sendEmailCode     --> pan/routers/api/v1.SendEmailCode.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/sendEmailCode     --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/forgetpasswd      --> pan/routers/api/v1.ForgetPassword.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/forgetpasswd      --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] GET    /api/v2/download          --> pan/routers/api/v2.Download.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/download          --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] POST   /api/v2/upload            --> pan/routers/api/v2.Upload.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/upload            --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] GET    /api/v2/getfilelist       --> pan/routers/api/v2.GetFileList.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/getfilelist       --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] DELETE /api/v2/deletefile        --> pan/routers/api/v2.DeleteFile.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/deletefile        --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] POST   /api/v2/updatefilename    --> pan/routers/api/v2.UpdateFileName.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/updatefilename    --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] POST   /api/v2/replacepasswd     --> pan/routers/api/v2.ReplacePassword.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/replacepasswd     --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] GET    /api/v2/createnewfolder   --> pan/routers/api/v2.CreateNewFolder.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/createnewfolder   --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] GET    /user/:id                 -->  (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on 0.0.0.0:1234
+signal: interrupt
+host 1234
+Config initialize SUCCESS!
+{{0.0.0.0 1234 pan-server 0 100} {mysql localhost 3306 root 273150 Pan [charset=utf8mb4 parseTime=True loc=Local]} {smtp.qq.com 587 1737429543@qq.com vrescmcdciqnfbjf} {xiaoqi pan-service 99999999}}
+Database initialize SUCCESS!
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /web/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (4 handlers)
+[GIN-debug] HEAD   /web/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (4 handlers)
+[GIN-debug] GET    /                         --> github.com/gin-gonic/gin.(*RouterGroup).StaticFile.func1 (4 handlers)
+[GIN-debug] HEAD   /                         --> github.com/gin-gonic/gin.(*RouterGroup).StaticFile.func1 (4 handlers)
+[GIN-debug] POST   /api/v1/login             --> pan/routers/api/v1.Login.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/login             --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/register          --> pan/routers/api/v1.Register.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/register          --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/testUserName      --> pan/routers/api/v1.TestUserName.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/testUserName      --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/testEmailCode     --> pan/routers/api/v1.TestEmailCode.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/testEmailCode     --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/loginWithEmail    --> pan/routers/api/v1.LoginWithEmail.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/loginWithEmail    --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/sendEmailCode     --> pan/routers/api/v1.SendEmailCode.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/sendEmailCode     --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/forgetpasswd      --> pan/routers/api/v1.ForgetPassword.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/forgetpasswd      --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] GET    /api/v2/download          --> pan/routers/api/v2.Download.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/download          --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] POST   /api/v2/upload            --> pan/routers/api/v2.Upload.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/upload            --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] GET    /api/v2/getfilelist       --> pan/routers/api/v2.GetFileList.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/getfilelist       --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] DELETE /api/v2/deletefile        --> pan/routers/api/v2.DeleteFile.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/deletefile        --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] POST   /api/v2/updatefilename    --> pan/routers/api/v2.UpdateFileName.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/updatefilename    --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] POST   /api/v2/replacepasswd     --> pan/routers/api/v2.ReplacePassword.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/replacepasswd     --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] GET    /api/v2/createnewfolder   --> pan/routers/api/v2.CreateNewFolder.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/createnewfolder   --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] GET    /user/:id                 -->  (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on 0.0.0.0:1234
+[GIN] 2023/06/07 - 18:12:23 | 200 |    2.276921ms |   37.128.246.96 | GET      "/api/v2/createnewfolder?floderpath=&newflodername="
+[GIN] 2023/06/07 - 18:12:28 | 304 |       68.06µs |   37.128.246.96 | GET      "/"
+[GIN] 2023/06/07 - 18:12:29 | 304 |       71.05µs |   37.128.246.96 | GET      "/web/static/js/main.59ee4eb0.js"
+[GIN] 2023/06/07 - 18:12:30 | 304 |      83.805µs |   37.128.246.96 | GET      "/web/static/css/main.3b010ce4.css"
+[GIN] 2023/06/07 - 18:12:30 | 200 |     749.094µs |   37.128.246.96 | GET      "/api/v2/getfilelist"
+[GIN] 2023/06/07 - 18:13:51 | 200 |     949.269µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:13:51 | 200 |     777.329µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+storage/2//15648 storage/2//4444444444
+[GIN] 2023/06/07 - 18:14:06 | 200 |     697.406µs |   37.128.246.96 | POST     "/api/v2/updatefilename"
+[GIN] 2023/06/07 - 18:14:09 | 200 |     897.381µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:14:32 | 200 |     842.129µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:14:32 | 200 |     592.057µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:15:37 | 500 |     767.293µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:15:37 | 500 |     630.363µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:15:46 | 500 |     661.808µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:15:46 | 500 |     460.277µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:16:29 | 200 |     622.544µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:16:29 | 200 |     460.994µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:17:05 | 200 |    1.130516ms |   37.128.246.96 | GET      "/api/v2/createnewfolder?floderpath=&newflodername=%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:17:08 | 200 |      650.67µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:17:23 | 200 |     696.056µs |   37.128.246.96 | GET      "/api/v2/createnewfolder?floderpath=&newflodername=%E7%9C%9F%E7%9A%84%E5%90%97%EF%BC%9F%E6%88%91%E4%B8%8D%E4%BF%A1"
+[GIN] 2023/06/07 - 18:17:26 | 200 |     677.303µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:17:56 | 200 |     677.565µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:17:56 | 200 |     527.216µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:18:10 | 200 |     617.472µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:18:10 | 200 |     417.553µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:18:32 | 200 |     668.755µs |   37.128.246.96 | GET      "/api/v2/createnewfolder?floderpath=%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC&newflodername=%E5%93%87%EF%BC%8C%E6%98%AF%E7%9C%9F%E7%9A%84%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:18:34 | 200 |      630.92µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:19:13 | 200 |     721.911µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:19:13 | 200 |     505.314µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:19:17 | 500 |     729.524µs |   37.128.246.96 | POST     "/api/v2/upload"
+[GIN] 2023/06/07 - 18:19:34 | 200 |     732.856µs |   37.128.246.96 | POST     "/api/v2/upload"
+[GIN] 2023/06/07 - 18:19:37 | 200 |     697.609µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+storage/2//green.png storage/2//sulaimanheaddeyanse.png
+[GIN] 2023/06/07 - 18:20:01 | 200 |     705.218µs |   37.128.246.96 | POST     "/api/v2/updatefilename"
+[GIN] 2023/06/07 - 18:20:04 | 200 |     676.957µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:20:17 | 200 |     735.211µs |   37.128.246.96 | GET      "/api/v2/createnewfolder?floderpath=&newflodername=9"
+[GIN] 2023/06/07 - 18:20:19 | 200 |     757.232µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:20:22 | 200 |    5.650317ms |   37.128.246.96 | DELETE   "/api/v2/deletefile"
+[GIN] 2023/06/07 - 18:20:24 | 200 |     758.814µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:20:37 | 200 |     745.875µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:20:37 | 200 |     469.383µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:20:57 | 200 |     685.408µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:20:57 | 200 |     439.402µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:22:20 | 200 |     690.529µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:22:20 | 200 |     558.262µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:22:38 | 200 |     754.617µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:22:38 | 200 |     598.273µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:22:55 | 200 |     712.166µs |   37.128.246.96 | GET      "/api/v2/createnewfolder?floderpath=%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC&newflodername=1"
+[GIN] 2023/06/07 - 18:22:57 | 200 |      670.78µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:23:18 | 200 |     706.482µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:23:18 | 200 |     582.979µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:23:53 | 200 |     700.302µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:23:53 | 200 |      505.21µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:24:23 | 200 |      673.68µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:24:23 | 200 |      567.73µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:24:24 | 200 |     705.006µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:24:24 | 200 |     488.037µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:25:01 | 200 |     643.163µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:25:01 | 200 |     570.036µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:25:15 | 200 |     680.119µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:25:15 | 200 |     527.406µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:25:27 | 200 |     682.504µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E7%9C%9F%E7%9A%84%E5%90%97%EF%BC%9F%E6%88%91%E4%B8%8D%E4%BF%A1"
+[GIN] 2023/06/07 - 18:25:27 | 200 |     505.781µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E7%9C%9F%E7%9A%84%E5%90%97%EF%BC%9F%E6%88%91%E4%B8%8D%E4%BF%A1"
+[GIN] 2023/06/07 - 18:25:32 | 200 |    1.119585ms |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:25:32 | 200 |    1.820487ms |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:25:52 | 500 |     676.077µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=doc/%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:25:53 | 500 |     593.116µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=doc/%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:26:10 | 200 |      705.37µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:28:23 | 200 |     728.843µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:28:23 | 200 |     700.497µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:28:41 | 200 |     705.578µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:28:53 | 200 |     705.977µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:28:53 | 200 |     582.698µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:29:09 | 500 |     633.072µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:29:09 | 500 |     416.304µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC%E8%8B%8F%E6%9D%A5%E6%9B%BC%E6%98%AF%E5%82%BB%E9%80%BC"
+[GIN] 2023/06/07 - 18:29:23 | 200 |     780.956µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:29:24 | 200 |     697.084µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:30:14 | 200 |     731.094µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:30:14 | 200 |     523.545µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:30:39 | 200 |     917.091µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:30:39 | 200 |    1.249372ms |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:30:51 | 200 |      739.45µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:30:51 | 200 |     553.564µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:32:07 | 200 |     697.348µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:32:07 | 200 |     649.531µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:32:16 | 200 |     695.232µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:32:17 | 200 |     649.805µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:32:35 | 200 |      653.98µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:32:35 | 200 |     455.122µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:32:49 | 200 |     717.049µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:32:49 | 200 |     526.499µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:32:53 | 200 |     676.467µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:32:53 | 200 |     469.063µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:32:59 | 200 |     753.693µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:32:59 | 200 |     504.407µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:33:10 | 200 |     671.627µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:33:10 | 200 |     458.902µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:33:15 | 500 |     602.886µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=doc//slmissb"
+[GIN] 2023/06/07 - 18:33:15 | 500 |     503.665µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=doc//slmissb"
+[GIN] 2023/06/07 - 18:33:28 | 200 |     663.226µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:33:28 | 200 |      457.25µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:35:53 | 500 |     593.804µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=doc//slmissb"
+[GIN] 2023/06/07 - 18:35:53 | 500 |     421.292µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=doc//slmissb"
+[GIN] 2023/06/07 - 18:36:01 | 200 |     667.959µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:36:01 | 200 |     452.879µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:36:55 | 200 |      751.68µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:36:55 | 200 |    3.063259ms | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:38:27 | 200 |     663.099µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:38:27 | 200 |     432.522µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:38:41 | 200 |     621.777µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:38:41 | 200 |     417.431µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:39:40 | 200 |    3.111939ms | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:39:40 | 200 |    1.454797ms | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:39:41 | 200 |     720.491µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:39:41 | 200 |      462.61µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:40:15 | 200 |     687.509µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:40:15 | 200 |     639.655µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:40:22 | 200 |     697.071µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb/yesyes"
+[GIN] 2023/06/07 - 18:40:22 | 200 |     504.787µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb/yesyes"
+[GIN] 2023/06/07 - 18:40:54 | 200 |     580.988µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb/yesyes"
+[GIN] 2023/06/07 - 18:40:54 | 200 |     367.418µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb/yesyes"
+[GIN] 2023/06/07 - 18:40:58 | 200 |     899.612µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:40:58 | 200 |     902.231µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:40:59 | 200 |     621.676µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb"
+[GIN] 2023/06/07 - 18:41:01 | 200 |     673.215µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb/yesyes"
+[GIN] 2023/06/07 - 18:41:13 | 200 |     688.446µs | 113.132.179.154 | POST     "/api/v2/upload"
+[GIN] 2023/06/07 - 18:41:14 | 200 |     608.076µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=slmissb/yesyes"
+[GIN] 2023/06/07 - 18:41:33 | 200 |     635.552µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:41:33 | 200 |     429.944µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:42:14 | 200 |    2.580265ms | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:42:14 | 200 |    1.425206ms | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+storage/2//nobelieve storage/2//
+[GIN] 2023/06/07 - 18:42:22 | 500 |     642.762µs | 113.132.179.154 | POST     "/api/v2/updatefilename"
+storage/2//nobelieve storage/2//不信
+[GIN] 2023/06/07 - 18:42:35 | 200 |     653.636µs | 113.132.179.154 | POST     "/api/v2/updatefilename"
+[GIN] 2023/06/07 - 18:42:37 | 200 |     753.744µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/07 - 18:42:39 | 200 |     625.035µs | 113.132.179.154 | GET      "/api/v2/getfilelist?floderpath=%E4%B8%8D%E4%BF%A1"
+[GIN] 2023/06/07 - 22:12:28 | 200 |    5.944384ms |   106.14.80.184 | GET      "/"
+[GIN] 2023/06/07 - 22:12:44 | 404 |         365ns |   106.14.80.184 | OPTIONS  "/"
+[GIN] 2023/06/07 - 22:14:00 | 404 |         464ns |   106.14.80.184 | GET      "/nice ports,/Trinity.txt.bak"
+[GIN] 2023/06/08 - 03:04:56 | 200 |        73.8µs |   198.235.24.60 | GET      "/"
+[GIN] 2023/06/08 - 03:50:10 | 200 |      63.319µs |  183.136.225.32 | GET      "/"
+[GIN] 2023/06/08 - 03:50:10 | 200 |      89.457µs |  183.136.225.32 | GET      "/web/favicon.ico"
+[GIN] 2023/06/08 - 03:50:11 | 404 |         484ns |  183.136.225.32 | GET      "/robots.txt"
+[GIN] 2023/06/08 - 05:35:33 | 200 |      70.727µs |  101.133.224.44 | GET      "/"
+[GIN] 2023/06/08 - 06:32:56 | 404 |         422ns |  68.183.193.242 | GET      "/aaa9"
+[GIN] 2023/06/08 - 06:32:56 | 404 |         968ns |  68.183.193.242 | GET      "/aab8"
+[GIN] 2023/06/08 - 06:32:57 | 200 |      71.696µs |  68.183.193.242 | GET      "/"
+[GIN] 2023/06/08 - 07:02:48 | 200 |     100.052µs | 162.216.149.128 | GET      "/"
+[GIN] 2023/06/08 - 09:05:03 | 200 |      85.518µs |   37.128.246.96 | GET      "/"
+[GIN] 2023/06/08 - 09:05:04 | 200 |  157.953623ms |   37.128.246.96 | GET      "/web/static/js/main.955a7f1f.js"
+[GIN] 2023/06/08 - 09:05:04 | 200 |     445.056µs |   37.128.246.96 | GET      "/web/static/css/main.267378f8.css"
+[mysql] 2023/06/08 09:05:05 packets.go:122: closing bad idle connection: unexpected read from socket
+[mysql] 2023/06/08 09:05:05 connection.go:173: driver: bad connection
+[mysql] 2023/06/08 09:05:05 packets.go:122: closing bad idle connection: unexpected read from socket
+[mysql] 2023/06/08 09:05:05 connection.go:173: driver: bad connection
+[GIN] 2023/06/08 - 09:05:05 | 200 |    2.627887ms |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:05 | 200 |     808.886µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:08 | 200 |      794.99µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"
+[GIN] 2023/06/08 - 09:05:19 | 200 |     794.602µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:19 | 200 |     734.351µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:20 | 200 |     751.314µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:20 | 200 |     723.525µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:22 | 200 |     800.353µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=111"
+[GIN] 2023/06/08 - 09:05:24 | 200 |     674.977µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=111/222(1)(2)"
+[GIN] 2023/06/08 - 09:05:32 | 200 |     726.009µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:32 | 200 |      749.02µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:37 | 200 |     814.296µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=111"
+[GIN] 2023/06/08 - 09:05:39 | 200 |     656.387µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=111/222(1)(2)"
+[GIN] 2023/06/08 - 09:05:43 | 200 |     735.171µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:44 | 200 |     768.853µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:05:46 | 200 |     679.744µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"
+[GIN] 2023/06/08 - 09:06:01 | 200 |     864.613µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:06:02 | 200 |     919.112µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:06:02 | 200 |     772.327µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:06:03 | 200 |     864.177µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath="
+[GIN] 2023/06/08 - 09:06:40 | 404 |         428ns |   37.128.246.96 | GET      "/api/v2/download/111"
+[GIN] 2023/06/08 - 09:06:43 | 200 |     803.947µs |   37.128.246.96 | GET      "/api/v2/getfilelist?floderpath=111"
+[GIN] 2023/06/08 - 09:06:45 | 404 |         433ns |   37.128.246.96 | GET      "/api/v2/download111/code.py"
+[GIN] 2023/06/08 - 09:09:19 | 200 |     439.091µs |   37.128.246.96 | GET      "/web/manifest.json"
+[GIN] 2023/06/08 - 09:09:20 | 200 |  315.289038ms |   37.128.246.96 | GET      "/web/static/js/main.955a7f1f.js.map"
+[GIN] 2023/06/08 - 09:09:20 | 200 |     576.584µs |   37.128.246.96 | GET      "/web/static/css/main.267378f8.css.map"
+[GIN] 2023/06/08 - 09:09:20 | 200 |     412.287µs |   37.128.246.96 | GET      "/web/logo192.png"
+[GIN] 2023/06/08 - 09:09:25 | 200 |     158.598µs |   37.128.246.96 | GET      "/web/logo192.png"
+[GIN] 2023/06/08 - 09:09:25 | 200 |     595.394µs |   37.128.246.96 | GET      "/web/logo512.png"
+[GIN] 2023/06/08 - 09:09:27 | 200 |     502.383µs |   37.128.246.96 | GET      "/web/favicon.ico"
+[GIN] 2023/06/08 - 09:09:40 | 404 |         689ns |   37.128.246.96 | GET      "/api/v2/download/code.py"
+[GIN] 2023/06/08 - 09:09:50 | 404 |         517ns |   37.128.246.96 | GET      "/favicon.ico"
+[GIN] 2023/06/08 - 09:10:45 | 404 |         800ns |   37.128.246.96 | GET      "/api/v2/download/code.py"
+[GIN] 2023/06/08 - 09:11:32 | 404 |         537ns |   37.128.246.96 | GET      "/api/v2/download/111"
+[GIN] 2023/06/08 - 09:11:43 | 404 |         494ns |   37.128.246.96 | GET      "/api/v2/download/111/copy.py"
+[GIN] 2023/06/08 - 09:11:58 | 404 |         520ns |   37.128.246.96 | GET      "/api/v2/download/111/code.py"
+[GIN] 2023/06/08 - 09:12:04 | 404 |         515ns |   37.128.246.96 | GET      "/api/v2/download/111/code.py"
+signal: terminated
+host 1234
+Config initialize SUCCESS!
+{{0.0.0.0 1234 pan-server 0 100} {mysql localhost 3306 root 273150 Pan [charset=utf8mb4 parseTime=True loc=Local]} {smtp.qq.com 587 1737429543@qq.com vrescmcdciqnfbjf} {xiaoqi pan-service 99999999}}
+Database initialize SUCCESS!
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /web/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (4 handlers)
+[GIN-debug] HEAD   /web/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (4 handlers)
+[GIN-debug] GET    /                         --> github.com/gin-gonic/gin.(*RouterGroup).StaticFile.func1 (4 handlers)
+[GIN-debug] HEAD   /                         --> github.com/gin-gonic/gin.(*RouterGroup).StaticFile.func1 (4 handlers)
+[GIN-debug] POST   /api/v1/login             --> pan/routers/api/v1.Login.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/login             --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/register          --> pan/routers/api/v1.Register.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/register          --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/testUserName      --> pan/routers/api/v1.TestUserName.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/testUserName      --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/testEmailCode     --> pan/routers/api/v1.TestEmailCode.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/testEmailCode     --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/loginWithEmail    --> pan/routers/api/v1.LoginWithEmail.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/loginWithEmail    --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/sendEmailCode     --> pan/routers/api/v1.SendEmailCode.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/sendEmailCode     --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] POST   /api/v1/forgetpasswd      --> pan/routers/api/v1.ForgetPassword.func1 (4 handlers)
+[GIN-debug] OPTIONS /api/v1/forgetpasswd      --> pan/pkg/middlieware.Cors.func1 (3 handlers)
+[GIN-debug] GET    /api/v2/download          --> pan/routers/api/v2.Download.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/download          --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] POST   /api/v2/upload            --> pan/routers/api/v2.Upload.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/upload            --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] GET    /api/v2/getfilelist       --> pan/routers/api/v2.GetFileList.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/getfilelist       --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] DELETE /api/v2/deletefile        --> pan/routers/api/v2.DeleteFile.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/deletefile        --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] POST   /api/v2/updatefilename    --> pan/routers/api/v2.UpdateFileName.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/updatefilename    --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] POST   /api/v2/replacepasswd     --> pan/routers/api/v2.ReplacePassword.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/replacepasswd     --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] GET    /api/v2/createnewfolder   --> pan/routers/api/v2.CreateNewFolder.func1 (5 handlers)
+[GIN-debug] OPTIONS /api/v2/createnewfolder   --> pan/pkg/middlieware.JWT.func1 (4 handlers)
+[GIN-debug] GET    /user/:id                 -->  (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on 0.0.0.0:1234
+[GIN-debug] [ERROR] listen tcp 0.0.0.0:1234: bind: address already in use

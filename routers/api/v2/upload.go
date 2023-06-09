@@ -2,7 +2,6 @@ package v2
 
 import (
 	"fmt"
-	"os"
 	"pan/pkg/app"
 	"pan/pkg/errcode"
 
@@ -13,16 +12,25 @@ import (
 func Upload() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		response := app.NewRespponse(ctx)
-		file, err := ctx.FormFile("file")
+
 		userid := ctx.GetUint("UserID")
+
+		file, err := ctx.FormFile("file")
+		floderpath := ctx.PostForm("floderpath")
 
 		if err != nil {
 			response.ToErrorResponse(errcode.FaildUploadFile.WithDetails("上传文件接受参数失败"))
 			return
 		}
 
-		pwd, _ := os.Getwd()
-		filepath := fmt.Sprintf("%s/storage/%d/%s", pwd, userid, file.Filename)
-		ctx.SaveUploadedFile(file, filepath)
+		floderpath = fmt.Sprintf("storage/%d/%s/%s", userid, floderpath, file.Filename)
+
+		err = ctx.SaveUploadedFile(file, floderpath)
+		if err != nil {
+			response.ToErrorResponse(errcode.FaildUploadFile.WithDetails("保存上传的文件失败"))
+			return
+		}
+
+		response.ToSuccessResponse("Upload File Success!")
 	}
 }

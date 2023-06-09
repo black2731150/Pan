@@ -26,6 +26,7 @@ var (
 	RenameErrer       = NewError(20000004, "更改文件名错误")
 	DeleteFileError   = NewError(20000005, "删除文件错误")
 	CanNotFindFolder  = NewError(20000006, "找不到文件夹")
+	CreateDirError    = NewError(20000007, "创建文件夹错误")
 )
 
 type Error struct {

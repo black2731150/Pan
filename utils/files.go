@@ -1,19 +1,35 @@
 package utils
 
 import (
+	"fmt"
 	"io/fs"
 	"os"
 	"pan/models"
 	"path/filepath"
-	"strings"
 )
 
-func MakeDir(path string) error {
-	err := os.Mkdir(path, 0755)
-	if err != nil {
-		return err
+func MakeDir(basePath string) error {
+	directory := basePath
+	counter := 1
+
+	for {
+		_, err := os.Stat(directory)
+		if os.IsNotExist(err) {
+			// 目录不存在，创建新目录
+			err := os.Mkdir(directory, 0755)
+			if err != nil {
+				return err
+			}
+			return nil
+		} else if err != nil {
+			// 发生其他错误
+			return err
+		}
+
+		// 目录已存在，尝试创建下一个唯一目录
+		directory = fmt.Sprintf("%s(%d)", basePath, counter)
+		counter++
 	}
-	return nil
 }
 
 func MakeFile(path string, filename string) error {
@@ -47,9 +63,7 @@ func GetFileStat(filepath string) (os.FileInfo, error) {
 	return filestat, nil
 }
 
-func RenameFile(filepath string, newname string) error {
-	lastindex := strings.LastIndex(filepath, "/")
-	newpath := filepath[:lastindex] + "/" + newname
+func RenameFile(filepath string, newpath string) error {
 	err := os.Rename(filepath, newpath)
 	if err != nil {
 		return err

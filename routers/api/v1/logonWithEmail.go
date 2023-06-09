@@ -33,7 +33,7 @@ func LoginWithEmail() gin.HandlerFunc {
 				}
 				user.GetEmailFromUserName()
 				maxAge := 60 * 60 * 24 * 7
-				tokenValue := "token=" + token + "; Path=/; Max-Age=" + strconv.Itoa(maxAge) + "; SameSite=None"
+				tokenValue := "token=" + token + "; Path=/; Max-Age=" + strconv.Itoa(maxAge) + "; SameSite=Lax; HttpOnly;"
 				ctx.Header("Set-Cookie", tokenValue)
 				// ctx.SetCookie("token", token, 60*60*24*7, "/", "", false, true)
 
@@ -41,6 +41,7 @@ func LoginWithEmail() gin.HandlerFunc {
 				response.ToResponse(data)
 			} else {
 				response.ToErrorResponse(errcode.UnauthorizedTokenGenerate)
+				return
 			}
 			response.ToErrorResponse(errcode.Success)
 		} else {

@@ -31,6 +31,7 @@ func Register() gin.HandlerFunc {
 
 		//获取密码并验证
 		user.Password = ctx.PostForm("password")
+		fmt.Println("Password: ", user.Password)
 		if len(user.Password) < 6 || len(user.Password) > 20 {
 			err := errcode.InbalidParams
 			err = err.WithDetails("密码长度不合规范")
